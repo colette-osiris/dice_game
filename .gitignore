@@ -1,2 +1,4 @@
 ##git ignore
 .DS_Store
+__pycache__
+sample.txt
