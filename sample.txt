@@ -1,0 +1,8 @@
+text here could be a git message 
+
+
+could also use to write python programs but why would we want t odo that?
+
+**this is good for when you want to make small edits to a file and/or you don't have access to a text editor (nano/PICO)
+
+
