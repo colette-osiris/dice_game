@@ -52,4 +52,23 @@ print(results)
 results = roll_again(dice_1_roll, dice_2_roll, dice_3_roll)
 print(results)
 
+
+
+def make_player(name):
+    return {'name': name, 'score': 0}
+
+# Setup 10 players
+num_players = int(input("How many players? "))
+game_players = []
+for x in range(num_players):
+    player_name = input("Player name? ")
+    game_players.append(make_player(player_name))
+
+current_player = 0
+
+# Now iterate through all the players endlessly
+# Print scores
+for player in game_players:
+    print(player['name'], "has", player['score'], "points")
+
 '''

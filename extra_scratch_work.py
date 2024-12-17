@@ -1,42 +1,32 @@
-##tuple scratch work 
 
-
-###tuple out dice game 
 
 ##imports
 import random 
 import rollagain 
-import numpy as np 
-import seaborn as sns
-import matplotlib.pyplot as plt
-import pandas as pd 
 
 
 
-###setting up for dictionary of players/scores
-player_scores = {}
 
-num_players = int(input("How many players are there? Please enter a number: "))
+def make_player(name):
+    return {'name': name, 'score': 0}
 
-##checkers
+# Setup number of players
+num_players = int(input("How many players? "))
+game_players = []
 
-#print(type(start))
-#num_players = int(num_players)
-#print(type(num_players))
 
-for i in range (num_players):
-     key = input(f"enter name of player: ")
-     value = 0
-     player_scores[key] = value
+for x in range(num_players):
+    player_name = input("Player name? ")
+    game_players.append(make_player(player_name))
 
-print(player_scores)
+current_player = 0
 
-keys_view = player_scores.keys()
-keys_list = list(keys_view)
-print(keys_list)
- 
+# Now iterate through all the players endlessly
 
-#dice variables 
+
+
+
+    #dice variables 
 dice_1 = 0
 dice_2 = 0
 dice_3 = 0
@@ -53,9 +43,11 @@ time_roll = 0
 ##scoring system outline 
 while game_round <= 2:
     #print(f"Round {game_round} starting now! Your total points = {total_points}")
-    for name in player_scores:
-        print(f"player {name}'s turn for round {game_round} is starting now. ")
-        round_points = 0
+    for player in game_players:
+        print(f"player {player}'s turn for round {game_round} is starting now. ")
+        current_player = 0
+        print(current_player)
+
         #total_points = 0
         results = rollagain.roll_again(dice_1, dice_2, dice_3)
         print(results)
@@ -170,22 +162,13 @@ while game_round <= 2:
                     print(f"Your points this round = {round_points}") #and your total points = {total_points}") 
                 time_roll += 1 
         total_points = total_points + round_points 
-        player_scores[name] = player_scores[name] + round_points
-        #print(player_scores)
+        game_players[current_player]['score'] += round_points
+        print()
         print(f"Your points this round = {round_points}, and your total points = {total_points}.")
-        i += 1
+        current_player += 1
     game_round += 1
 
-print(player_scores)
-
-###barplot of scores
-
-#extracting for bar plot 
-df = pd.DataFrame({'name': player_scores.keys(), 'score': player_scores.values()})
-
-##bar plot of scores 
-sns.barplot(data = df, x = 'name', y = 'score')
-plt.show()
-
-##write dataframe to CSV file 
-df.to_csv('tuple_game_scores.csv', mode='a', index=False)
+# Print scores
+for player in game_players:
+    end_game_output = f"{player['name']} has {player['score']}."
+    print(end_game_output)

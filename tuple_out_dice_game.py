@@ -9,6 +9,22 @@ print("\n \n Hello! Welcome to the Tuple Out Dice Game! \n \n The object of the 
 
 ##number of players 
 #num_players = input("How many players would like to play?")
+num_players = input("How many players are there? Please enter a number: ")
+start = 0
+print(type(start))
+num_players = int(num_players)
+print(type(num_players))
+
+players = []
+
+###naming players
+for i in range (start, num_players):
+    player_name = input("Please enter your name here: ")
+    players.append(player_name)
+    print(players)
+    num_players =+ 1
+
+
 
 ##dice variables 
 dice_1 = 0
@@ -138,7 +154,12 @@ while game_round <= 5:
     print(f"Your points this round = {round_points}, and your total points = {total_points}.")
     game_round += 1
 
-                
+
+#end_game_output = f"{player['name']} has {player['score']}."
+with open("tuple_out_game_results.csv", "a") as game_output_connection:
+    ##save output to new file 
+    #print(dir_file_output_upper)
+    game_output_contents = game_output_connection.write()       
 
 
 

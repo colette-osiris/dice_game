@@ -35,7 +35,7 @@ PROCESS WALK THROUGH NOTES
 
             If they chose 'n', the program will immediately end the round, reporting the round points and total points before proceeding to the next round.
 
-            Please note that is this version of the game, if user decides to reroll all three dice, in the event that two dice have equal values, the program will not "freeze" them. Rather, the user will have the option to re-roll all or none of the dice. 
+            Please note that in this version of the game, if user decides to reroll all three dice, in the event that two dice have equal values, the program will not "freeze" them. Rather, the user will have the option to re-roll all or none of the dice. Similarly, there is no risk of "tupling out" on re-rolls, only on the original roll. 
 
 
 INSTALLATION NOTES
@@ -68,6 +68,14 @@ FUNCTION PARAMETERS NOTES
         - The variable 'scores':
             - a list
             - represents the re-rolled values of 1-3 dice depending on optional arguments 
+
+SPECIAL FEATURES:
+
+    1. Bar graph of player scores 
+        This special feature uses numpy/pandas AND seaborn to produce a bar graph of the players scores in the game. This feature contibutes to the game significantly because it allows the players to visualize the differences in their scores. Please note the number of players is subject to change depending on the user input. 
+
+    2. CSV file of player scores
+        This special feature uses pandas to create a CSV file that stores all the scores of all players. Please note that each time the game is played, the scores are ADDED to the file rather than replacing values already inside the file. This is important/contributes significantly to the game because it allows players to access all previous scores so they can compare their gameplay to anyone else who has ever played. 
 
 
 WHY THIS IS HELPFUL NOTES
