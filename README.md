@@ -72,7 +72,7 @@ FUNCTION PARAMETERS NOTES
 SPECIAL FEATURES:
 
     1. Bar graph of player scores 
-        This special feature uses numpy/pandas AND seaborn to produce a bar graph of the players scores in the game. This feature contibutes to the game significantly because it allows the players to visualize the differences in their scores. Please note the number of players is subject to change depending on the user input. 
+        This special feature uses numpy/pandas AND seaborn to produce a bar graph of the players scores in the game. This feature contibutes to the game significantly because it allows the players to visualize the differences in their scores, and see who won. Please note the number of players is subject to change depending on the user input. 
 
     2. CSV file of player scores
         This special feature uses pandas to create a CSV file that stores all the scores of all players. Please note that each time the game is played, the scores are ADDED to the file rather than replacing values already inside the file. This is important/contributes significantly to the game because it allows players to access all previous scores so they can compare their gameplay to anyone else who has ever played. 
